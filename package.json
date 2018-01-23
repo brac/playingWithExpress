@@ -1,0 +1,25 @@
+{
+  "name": "playingWithExpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "db:create": "createdb contactsrestapi",
+    "db:init": "npm run db:loadschema && npm run db:seed",
+    "db:loadschema": "psql contactsrestapi < ./database/schema.sql",
+    "db:seed": "psql contactsrestapi < ./database/seed.sql"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "pg-promise": "^7.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11",
+    "pg-monitor": "^0.8.3"
+  }
+}
